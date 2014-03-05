@@ -1,0 +1,37 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{E7DE3CED-A298-47B6-BD90-432F81C4529F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7E283BA9-4C18-4459-9F79-3F4C61F47FD5} = {7E283BA9-4C18-4459-9F79-3F4C61F47FD5}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1_3", "1_3.vcxproj", "{7E283BA9-4C18-4459-9F79-3F4C61F47FD5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{18AEB5A0-2AEE-44EC-98C7-ADCA32F97726} = {18AEB5A0-2AEE-44EC-98C7-ADCA32F97726}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RUN_TESTS", "RUN_TESTS.vcxproj", "{132F93E9-002F-4371-8BA9-97AE9DB206C6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "..\..\ZERO_CHECK.vcxproj", "{18AEB5A0-2AEE-44EC-98C7-ADCA32F97726}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7DE3CED-A298-47B6-BD90-432F81C4529F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7E283BA9-4C18-4459-9F79-3F4C61F47FD5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7E283BA9-4C18-4459-9F79-3F4C61F47FD5}.Debug|Win32.Build.0 = Debug|Win32
+		{132F93E9-002F-4371-8BA9-97AE9DB206C6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{18AEB5A0-2AEE-44EC-98C7-ADCA32F97726}.Debug|Win32.ActiveCfg = Debug|Win32
+		{18AEB5A0-2AEE-44EC-98C7-ADCA32F97726}.Debug|Win32.Build.0 = Debug|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

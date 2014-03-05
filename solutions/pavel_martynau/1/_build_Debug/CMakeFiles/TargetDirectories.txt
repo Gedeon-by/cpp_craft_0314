@@ -1,0 +1,5 @@
+D:/Learning/C++ Craft/cpp_craft_0314/solutions/pavel_martynau/1/_build_Debug/sources/1_1/CMakeFiles/1_1.dir
+D:/Learning/C++ Craft/cpp_craft_0314/solutions/pavel_martynau/1/_build_Debug/sources/1_2/CMakeFiles/1_2.dir
+D:/Learning/C++ Craft/cpp_craft_0314/solutions/pavel_martynau/1/_build_Debug/sources/1_3/CMakeFiles/1_3.dir
+D:/Learning/C++ Craft/cpp_craft_0314/solutions/pavel_martynau/1/_build_Debug/CMakeFiles/ALL_BUILD.dir
+D:/Learning/C++ Craft/cpp_craft_0314/solutions/pavel_martynau/1/_build_Debug/CMakeFiles/ZERO_CHECK.dir
