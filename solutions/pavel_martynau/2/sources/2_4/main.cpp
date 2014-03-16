@@ -17,7 +17,7 @@ struct message_str {
 
 int main() {
 	std::ifstream input_file ( BINARY_DIR "/2.4.in", std::ios::binary );
-	std::ofstream output_file ( BINARY_DIR "/2.4.out", std::ios::binary );
+	std::ofstream output_file ( BINARY_DIR "/2.4.out", std::ofstream::trunc|std::ios::binary );
 	if(input_file.is_open()){
 		uint32_t current_time = 0;
 		message_str msg;

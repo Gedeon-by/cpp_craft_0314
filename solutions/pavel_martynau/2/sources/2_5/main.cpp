@@ -12,7 +12,7 @@ struct message_str {
 
 int main() {
 	std::ifstream input_file ( BINARY_DIR "/2.5.in", std::ios::binary );
-	std::ofstream output_file ( BINARY_DIR "/2.5.out", std::ios::binary );
+	std::ofstream output_file ( BINARY_DIR "/2.5.out", std::ofstream::trunc|std::ios::binary );
 	if(input_file.is_open()){
 		uint32_t current_time = 0;
 		message_str msg;
@@ -29,6 +29,8 @@ int main() {
 					output_file.write( (char*)&msg.length, sizeof(msg.length) );
 					output_file.write( msg.message, msg.length );
 				}
+			} else {
+				input_file.ignore(msg.length);
 			}
 		}
 
