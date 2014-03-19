@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include <boost/cstdint.hpp>
+#include <cstdint>
 #include <market_message.h>
 
 int main()
@@ -10,20 +10,21 @@ int main()
 
 	boost::uint32_t current_time = 0;
 
-	while( in ){
+	while( !in.eof() ){
 		binary_reader::market_message msg(in);
 
 		if( msg.time() > current_time )
 			current_time = msg.time();
 		
-		std::cout << msg.type() << " " << msg.time() << " " << msg.len() << " " << msg.msg()<< " " << sizeof(msg.msg()) << std::endl;
+		//std::cout << msg.type() << " " << msg.time() << " " << msg.len() << " " << msg.msg()<< " +++ " << sizeof(msg.msg()) << std::endl;
 
 		if( msg.type() == 1u || msg.type() == 2u || msg.type() == 3u || msg.type() == 4u )
 				if ( (current_time - msg.time()) < 2u ) 
-					if(out.is_open())
+					if(out)
 						msg.write(out);
 
 	}
+	
 	in.close();
 	out.close();
 
