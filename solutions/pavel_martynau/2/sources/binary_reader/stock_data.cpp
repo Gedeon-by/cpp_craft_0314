@@ -2,7 +2,7 @@
 
 binary_reader::stock_data::stock_data( std::ifstream& in )
 {
-	// your code
+
 }
 binary_reader::stock_data::stock_data( const char* stock_name,
 							const char* date_time,

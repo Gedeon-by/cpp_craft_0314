@@ -1,19 +1,14 @@
 #include "market_message.h"
-#include <iostream>
 #include <cstring>
 #include <boost/cstdint.hpp>
 
 binary_reader::market_message::market_message( std::ifstream& in )
 {
 	in.read( (char*)&type_, sizeof( type_ ) );
-	std::cout << type_ << " ";
 	in.read( (char*)&time_, sizeof( time_ ) );
-	std::cout << time_ << " ";
 	in.read( (char*)&len_, sizeof( len_ ) );
-	std::cout << len_ << " ";
 	msg_ = new char[len_];
 	in.read( msg_, len_ );
-	std::cout << msg_ << std::endl;
 }
 binary_reader::market_message::market_message( const boost::uint32_t type, const boost::uint32_t time, const boost::uint32_t len, const char* const msg ) : type_(type), time_(time), len_(len)
 {
@@ -50,6 +45,7 @@ const char* const binary_reader::market_message::msg() const
 {
 	return msg_;
 }
-boost::uint32_t binary_reader::market_message::instance_size() const {
-	return sizeof( type_) + sizeof( time_) + len_;
+boost::uint32_t binary_reader::market_message::size() const
+{
+	return ( sizeof( type_ ) + sizeof( time_ ) + sizeof( len_ ) + len_);
 }

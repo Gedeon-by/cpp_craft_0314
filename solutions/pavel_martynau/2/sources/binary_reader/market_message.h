@@ -20,12 +20,11 @@ namespace binary_reader
 		explicit market_message( const boost::uint32_t type, const boost::uint32_t time, const boost::uint32_t len, const char* const msg );
 		void write( std::ofstream& out );
 		~market_message();
-		boost::uint32_t instance_size() const;
-		//
 		boost::uint32_t type() const;
 		boost::uint32_t time() const;
 		boost::uint32_t len() const;
 		const char* const msg() const;
+		boost::uint32_t size() const;
 	};
 }
 
