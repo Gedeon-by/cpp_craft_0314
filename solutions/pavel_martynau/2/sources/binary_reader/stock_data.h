@@ -35,6 +35,7 @@ namespace binary_reader
 							const double f4 );		
 		~stock_data();
 		//
+		boost::uint32_t get_days() const;
 		void write( std::ofstream& out );
 		void write_raw( std::ofstream& out );
 	};

@@ -19,14 +19,11 @@ int main()
 	int buffer_size = 2048;
 
 	std::ifstream in ( BINARY_DIR "/2.5_example.in", std::ios::binary );
-	std::ofstream out ( BINARY_DIR "/2.5.out", std::ofstream::trunc|std::ios::binary );
 
 	static boost::uint32_t current_time = 0;
 
 	if(in) {
 		while( in.read( (char*)&msg_temp.type, sizeof( msg_temp.type ) ) ) {
-
-			std::cout<< "type "<<msg_temp.type<<std::endl;
 
 			in.read( (char*)&msg_temp.time, sizeof( msg_temp.time ) );
 			in.read( (char*)&msg_temp.length, sizeof( msg_temp.length ) );
@@ -59,16 +56,23 @@ int main()
 		return 1;
 	}
 
+	in.close();
+	std::ofstream out ( BINARY_DIR "/2.5.out", std::ofstream::trunc|std::ios::binary );
+
 	for (std::map<boost::uint32_t, std::map<boost::uint32_t, int>>::iterator i = msg_type_time_qty.begin(), iend = msg_type_time_qty.end(); i != iend; ++i)
 	{
-		std::cout<< i->first<<" ";
+		boost::uint32_t sec = 0;
+		boost::uint32_t qty = 0;
 		for (std::map<boost::uint32_t, int>::iterator j = i->second.begin(), jend = i->second.end(); j != jend; ++j)
 		{
-			std::cout<<" "<< j->first<<" "<< j->second<<std::endl;
+			sec++;
+			qty += j->second;
 		}
+		qty /= sec;
+		out.write( (char*)&i->first, sizeof(i->first) );
+		out.write( (char*)&qty, sizeof(qty) );
 	}
 
-	in.close();
+	
 	out.close();
 }
-

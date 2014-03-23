@@ -35,6 +35,9 @@ int main()
 				if ( ( current_time - mrkt_msg.time() ) < 2u ) 
 					mrkt_msg.write(out);
 		}
+	} else {
+		std::cout<< "Probably file is missing" << std::endl;
+		return 1;
 	}
 	
 	in.close();

@@ -10,7 +10,10 @@ binary_reader::market_message::market_message( std::ifstream& in )
 	msg_ = new char[len_];
 	in.read( msg_, len_ );
 }
-binary_reader::market_message::market_message( const boost::uint32_t type, const boost::uint32_t time, const boost::uint32_t len, const char* const msg ) : type_(type), time_(time), len_(len)
+binary_reader::market_message::market_message( const boost::uint32_t type, 
+						const boost::uint32_t time, 
+						const boost::uint32_t len, 
+						const char* const msg ) : type_(type), time_(time), len_(len)
 {
 		msg_ = new char[len_];
 		strncpy(msg_, msg, len_);
