@@ -23,22 +23,17 @@ void file_handling(int thread_num) {
 
 		if(in) {
 			std::string out_file_path = BINARY_DIR + get_file_name("output", thread_num);
-			std::cout<< out_file_path << std::endl;
 			std::ofstream out(out_file_path, std::ios::trunc|std::ios::binary);
+			char c[4];
 			while( !in.eof() ) {
 				binary_reader::market_message msg(in);
-				if(msg.msg()[0] != EOF) {
-					std::cout<< "MSG() " << msg.msg()<< " "<< msg.type() << std::endl;
-					msg.write(out);
-				} else {
-					break;
-				}
+				if(in.eof()) break;
+				msg.write(out);
 			}
 			in.close();
 			out.close();
 		} else {
 			std::cout<< "File " << get_file_name("input", thread_num) << " doesn't exist." << std::endl;
-			//boost::this_thread::
 		}
 		in.close();
 	}
@@ -50,5 +45,7 @@ int main()
 		boost::thread t(&file_handling, i);
 		t.join();
 	}
+
+	return 0;
 }
 
