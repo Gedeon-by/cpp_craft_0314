@@ -47,7 +47,7 @@ void file_handling(int thread_num) {
 				
 					in.read(msg_temp.message_ptr, msg_temp.length);
 
-					binary_reader::market_message mrkt_msg(msg_temp.type, msg_temp.time, msg_temp.length, msg_temp.message_ptr);
+					binary_reader::market_message mrkt_msg(msg_temp.type, msg_temp.time, msg_temp.message_ptr);
 
 					if( mrkt_msg.type() != current_time ) 
 						current_time = mrkt_msg.type();
